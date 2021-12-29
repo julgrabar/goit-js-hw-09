@@ -24,9 +24,9 @@ const timer = {
     },
     showValues({ days, hours, minutes, seconds }){
         refs.daysValue.textContent = addLeadingZero(days);
-              refs.hoursValue.textContent = addLeadingZero(hours);
-              refs.minutesValue.textContent = addLeadingZero(minutes);
-              refs.secondsValue.textContent = addLeadingZero(seconds);}
+        refs.hoursValue.textContent = addLeadingZero(hours);
+        refs.minutesValue.textContent = addLeadingZero(minutes);
+        refs.secondsValue.textContent = addLeadingZero(seconds);}
 }
 const options = {
     enableTime: true,
