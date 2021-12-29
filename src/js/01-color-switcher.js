@@ -8,13 +8,14 @@ refs.startBtn.addEventListener('click',changeColor);
 refs.stopBtn.addEventListener('click', stopChangeColor);
 refs.stopBtn.disabled = true;
 function changeColor(){
-    const randomColor = getRandomHexColor();
+    const randomColor = addLeadingZero(getRandomHexColor());
     refs.body.style.backgroundColor = randomColor;
     refs.startBtn.disabled = true;
     refs.stopBtn.disabled = false;
     intervalId = setInterval(()=>{
-    const randomColor = getRandomHexColor();
+    const randomColor = addLeadingZero(getRandomHexColor());
     refs.body.style.backgroundColor = randomColor;
+    console.log(randomColor)
     },1000)
 };
 function stopChangeColor(){
@@ -25,3 +26,6 @@ function stopChangeColor(){
 function getRandomHexColor() {
     return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
   }
+  function addLeadingZero(value){
+    return String(value).padEnd(7, '0')
+}
